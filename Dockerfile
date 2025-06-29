@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM rust:1.78 as builder
+FROM rust:latest as builder
 
 # Create a new empty shell project
 WORKDIR /usr/src/rust-ping-pong
@@ -14,7 +14,7 @@ COPY src ./src
 RUN cargo build --release
 
 # Stage 2: Create the final, minimal image
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 # Copy the compiled binary from the builder stage
 COPY --from=builder /usr/src/rust-ping-pong/target/release/rust-ping-pong /usr/local/bin/rust-ping-pong
