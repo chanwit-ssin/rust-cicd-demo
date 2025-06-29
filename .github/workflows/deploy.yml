@@ -2,8 +2,8 @@ name: Deploy to Railway
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*.*.*' # Triggers on tags like v1.0.0, v2.0.1, etc.
 
 jobs:
   deploy:

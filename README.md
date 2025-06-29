@@ -7,4 +7,4 @@ A simple ping-pong application written in Rust.
 This project uses GitHub Actions for continuous integration and continuous deployment (CI/CD). 
 
 - **main.yml**: This workflow runs tests and lints the code on every push to the `main` branch.
-- **deploy.yml**: This workflow deploys the application to Railway on every push to the `main` branch.
+- **deploy.yml**: This workflow deploys the application to Railway when a new tag (e.g., `v1.0.0`) is pushed.
